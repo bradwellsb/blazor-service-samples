@@ -1,0 +1,21 @@
+﻿@page "/"
+@using AppDataService.Components
+@inject Services.AppData AppData
+
+<h1>Blazor Singleton Test</h1>
+<InputComponent />
+<DisplayComponent />
+<a href="/page2">Go to Page 2</a>
+
+@code {
+    protected override void OnInitialized()
+    {
+        AppData.OnChange += MyEventHandler;
+    }
+
+    private void MyEventHandler()
+    {
+        Console.WriteLine("AppData changed.");
+    }
+}
+

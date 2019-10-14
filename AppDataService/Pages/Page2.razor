@@ -1,0 +1,14 @@
+﻿@page "/page2"
+@inject Services.AppData AppData
+
+<h1>Second Page</h1>
+<div style="width:640px; height:480px; background-color:@AppData.Color">
+    <p>You entered the number @AppData.Number.</p>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        AppData.OnChange += StateHasChanged;
+    }
+}

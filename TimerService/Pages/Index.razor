@@ -1,0 +1,22 @@
+﻿@inject Services.BlazorTimer Timer
+@inject NavigationManager NavManager
+@page "/"
+
+<h1>Blazor Timer</h1>
+
+<button  @onclick="StartTimer">Start Timer</button>
+
+@code {
+    private void StartTimer()
+    {
+        Timer.SetTimer(5000);
+        Timer.OnElapsed += TimerElapsedHandler;
+        Console.WriteLine("Timer Started.");
+    }
+
+    private void TimerElapsedHandler()
+    {
+        Console.WriteLine("Timer Elapsed.");
+        NavManager.NavigateTo("countdowncomplete");
+    }
+}

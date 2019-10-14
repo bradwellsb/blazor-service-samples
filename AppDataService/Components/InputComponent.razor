@@ -1,0 +1,17 @@
+﻿@inject Services.AppData AppData
+<h3>Input Component</h3>
+<input type="number" @bind="AppData.Number" @bind:event="oninput" />
+<br /><br />
+<select @bind="AppData.Color">
+    <option value="#ffffff">White</option>
+    <option value="#add8e6">Light Blue</option>
+    <option value="#90ee90">Light Green</option>
+    <option value="#d3d3d3">Light Grey</option>
+    <option value="#ffb6c1">Light Pink</option>
+</select>
+<br /><br />
+
+@code {
+
+}
+ 

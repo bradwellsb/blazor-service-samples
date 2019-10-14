@@ -1,0 +1,12 @@
+﻿@inject Services.AppData AppData
+<div style="width:300px; height:100px; background-color:@AppData.Color">
+    <h3>Display Component</h3>
+    <p>You entered the number @AppData.Number.</p>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        AppData.OnChange += StateHasChanged;
+    }
+}
